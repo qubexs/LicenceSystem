@@ -1,0 +1,18 @@
+# Secrets — NEVER commit
+.env
+beest-data/
+user.txt
+.*.swp
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+keys-out/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

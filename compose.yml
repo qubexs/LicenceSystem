@@ -1,0 +1,14 @@
+services:
+  beest-license:
+    build: ./server
+    container_name: beest-license
+    restart: unless-stopped
+    ports:
+      - "8090:8000"   # LAN-reachable so cloudflared (host network) can route beest.cikgututor.com -> 192.168.0.191:8090 ; 8884 reserved staging
+    volumes:
+      - ./beest-data:/data
+    env_file:
+      - .env
+    environment:
+      - BEEST_DATA_DIR=/data
+      - BEEST_PUBLIC_URL=https://beest.cikgututor.com
